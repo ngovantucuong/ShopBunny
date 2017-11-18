@@ -24,6 +24,7 @@
 		E8917C1E1FBDC12E00746974 /* UIVisualEffectViewX.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8917C141FBDC12E00746974 /* UIVisualEffectViewX.swift */; };
 		E8917C211FBDC3E700746974 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8917C201FBDC3E700746974 /* RegisterController.swift */; };
 		E8917C241FBDC5B600746974 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8917C231FBDC5B600746974 /* Extension.swift */; };
+		E8C534371FC03ADD00279145 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C534361FC03ADD00279145 /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		E8917C141FBDC12E00746974 /* UIVisualEffectViewX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVisualEffectViewX.swift; sourceTree = "<group>"; };
 		E8917C201FBDC3E700746974 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		E8917C231FBDC5B600746974 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		E8C534361FC03ADD00279145 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				E8917C201FBDC3E700746974 /* RegisterController.swift */,
+				E8C534361FC03ADD00279145 /* LoginController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				E8917C1E1FBDC12E00746974 /* UIVisualEffectViewX.swift in Sources */,
 				E8917C151FBDC12E00746974 /* UIButtonX.swift in Sources */,
 				E8917C161FBDC12E00746974 /* UIImageViewX.swift in Sources */,
+				E8C534371FC03ADD00279145 /* LoginController.swift in Sources */,
 				E8917C1D1FBDC12E00746974 /* UIViewXRadialGradient.swift in Sources */,
 				E8917C1C1FBDC12E00746974 /* UIViewX.swift in Sources */,
 				E8917C1A1FBDC12E00746974 /* UIViewAnchorPoint.swift in Sources */,
