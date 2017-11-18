@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6940AF9EF95F751F57E33CF8 /* Pods_ClothesShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BF99648C8639E1DEDD6E920 /* Pods_ClothesShop.framework */; };
 		E8917BF61FBDB97900746974 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8917BF51FBDB97900746974 /* AppDelegate.swift */; };
 		E8917BFB1FBDB97900746974 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8917BF91FBDB97900746974 /* Main.storyboard */; };
 		E8917BFE1FBDB97900746974 /* ClothesShop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E8917BFC1FBDB97900746974 /* ClothesShop.xcdatamodeld */; };
@@ -25,9 +26,12 @@
 		E8917C211FBDC3E700746974 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8917C201FBDC3E700746974 /* RegisterController.swift */; };
 		E8917C241FBDC5B600746974 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8917C231FBDC5B600746974 /* Extension.swift */; };
 		E8C534371FC03ADD00279145 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C534361FC03ADD00279145 /* LoginController.swift */; };
+		E8C5343A1FC05DD100279145 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8C534391FC05DD100279145 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BF99648C8639E1DEDD6E920 /* Pods_ClothesShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClothesShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C731CC1536CFA13C3E4E2338 /* Pods-ClothesShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClothesShop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClothesShop/Pods-ClothesShop.debug.xcconfig"; sourceTree = "<group>"; };
 		E8917BF21FBDB97900746974 /* ClothesShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClothesShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8917BF51FBDB97900746974 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8917BFA1FBDB97900746974 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,6 +52,9 @@
 		E8917C201FBDC3E700746974 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		E8917C231FBDC5B600746974 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		E8C534361FC03ADD00279145 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		E8C534381FC0519900279145 /* ClothesShop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClothesShop.entitlements; sourceTree = "<group>"; };
+		E8C534391FC05DD100279145 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EF8EE375D86DBA6472C85CBA /* Pods-ClothesShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClothesShop.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClothesShop/Pods-ClothesShop.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,17 +62,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6940AF9EF95F751F57E33CF8 /* Pods_ClothesShop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		680AA7331174C3BF25ED555B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0BF99648C8639E1DEDD6E920 /* Pods_ClothesShop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D393DF3B47EDF7913B150D15 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C731CC1536CFA13C3E4E2338 /* Pods-ClothesShop.debug.xcconfig */,
+				EF8EE375D86DBA6472C85CBA /* Pods-ClothesShop.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E8917BE91FBDB97900746974 = {
 			isa = PBXGroup;
 			children = (
 				E8917BF41FBDB97900746974 /* ClothesShop */,
 				E8917BF31FBDB97900746974 /* Products */,
+				D393DF3B47EDF7913B150D15 /* Pods */,
+				680AA7331174C3BF25ED555B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +107,7 @@
 		E8917BF41FBDB97900746974 /* ClothesShop */ = {
 			isa = PBXGroup;
 			children = (
+				E8C534381FC0519900279145 /* ClothesShop.entitlements */,
 				E8917C221FBDC59F00746974 /* Extension */,
 				E8917C1F1FBDC3C000746974 /* Controller */,
 				E8917BF51FBDB97900746974 /* AppDelegate.swift */,
@@ -88,6 +116,7 @@
 				E8917C011FBDB97900746974 /* LaunchScreen.storyboard */,
 				E8917C041FBDB97900746974 /* Info.plist */,
 				E8917BFC1FBDB97900746974 /* ClothesShop.xcdatamodeld */,
+				E8C534391FC05DD100279145 /* GoogleService-Info.plist */,
 				E8917C0A1FBDC12E00746974 /* DesignableX */,
 			);
 			path = ClothesShop;
@@ -134,9 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E8917C071FBDB97900746974 /* Build configuration list for PBXNativeTarget "ClothesShop" */;
 			buildPhases = (
+				8E72B6D16A7DBBF7D62CD44A /* [CP] Check Pods Manifest.lock */,
 				E8917BEE1FBDB97900746974 /* Sources */,
 				E8917BEF1FBDB97900746974 /* Frameworks */,
 				E8917BF01FBDB97900746974 /* Resources */,
+				82F84F78609AAA64A661E7EA /* [CP] Embed Pods Frameworks */,
+				97D063F285E94FFA3449719F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -160,6 +192,11 @@
 					E8917BF11FBDB97900746974 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -187,12 +224,78 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8917C031FBDB97900746974 /* LaunchScreen.storyboard in Resources */,
+				E8C5343A1FC05DD100279145 /* GoogleService-Info.plist in Resources */,
 				E8917C001FBDB97900746974 /* Assets.xcassets in Resources */,
 				E8917BFB1FBDB97900746974 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		82F84F78609AAA64A661E7EA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ClothesShop/Pods-ClothesShop-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClothesShop/Pods-ClothesShop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E72B6D16A7DBBF7D62CD44A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ClothesShop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97D063F285E94FFA3449719F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ClothesShop/Pods-ClothesShop-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClothesShop/Pods-ClothesShop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E8917BEE1FBDB97900746974 /* Sources */ = {
@@ -348,8 +451,10 @@
 		};
 		E8917C081FBDB97900746974 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C731CC1536CFA13C3E4E2338 /* Pods-ClothesShop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClothesShop/ClothesShop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VE76Z49SVP;
 				INFOPLIST_FILE = ClothesShop/Info.plist;
@@ -363,8 +468,10 @@
 		};
 		E8917C091FBDB97900746974 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF8EE375D86DBA6472C85CBA /* Pods-ClothesShop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ClothesShop/ClothesShop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VE76Z49SVP;
 				INFOPLIST_FILE = ClothesShop/Info.plist;
