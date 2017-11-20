@@ -6,10 +6,16 @@ target 'ClothesShop' do
   use_frameworks!
 
   # Pods for ClothesShop
+
+	#Pod for gmail
 pod ‘Firebase/Core’
 pod ‘Firebase/Auth’
 pod ‘Firebase/Database’
 pod ‘Firebase/Storage’
 pod ‘GoogleSignIn’
 
+	#Pod for facebook
+pod ‘Bolts’
+pod ‘FBSDKCoreKit’
+pod ‘FBSDKLoginKit’
 end
