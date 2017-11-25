@@ -29,6 +29,8 @@ class RegisterController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     // set layout for register
     private func setLayoutRegister() {
+//        profileImage.backgroundColor = UIColor.clear
+        profileImage.tintColor = UIColor.white
         username.setBottomLine(borderColor: UIColor.white, textColor: UIColor.white, placeHolderColor: UIColor.white, placeHolder: "Enter your name...")
         email.setBottomLine(borderColor: UIColor.white, textColor: UIColor.white, placeHolderColor: UIColor.white, placeHolder: "Enter address email...")
         password.setBottomLine(borderColor: UIColor.white, textColor: UIColor.white, placeHolderColor: UIColor.white, placeHolder: "Please enter password...")
@@ -110,13 +112,17 @@ class RegisterController: UIViewController, UIImagePickerControllerDelegate, UIN
                 print(error!)
                 return
             }
-//            self.messageController?.fetchUserAndSetupNavBarTitle()
+            
             self.dismiss(animated: true, completion: nil)
             print("Save user successfully into firebase db")
         })
     }
     
     @IBAction func handleLogin(_ sender: UIButton) {
-        
+        performSegue(withIdentifier: "backLogin", sender: nil)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }

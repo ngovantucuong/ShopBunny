@@ -11,7 +11,7 @@ import GoogleSignIn
 import Firebase
 import FBSDKLoginKit
 
-class LoginController: UIViewController, GIDSignInUIDelegate {
+class LoginController: UIViewController, GIDSignInUIDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var logoShop: UIImageViewX!
     @IBOutlet weak var email: UITextFieldX!
@@ -26,7 +26,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate {
 
         setupLayout()
         GIDSignIn.sharedInstance().uiDelegate = self
-        //SignInFace.delegate = self
+        password.delegate = self
         
         SignIn.addTarget(self, action: #selector(handleSignInGmail), for: .touchUpInside)
         SignInFace.addTarget(self, action: #selector(handleSignInFacebook), for: .touchUpInside)
@@ -42,7 +42,17 @@ class LoginController: UIViewController, GIDSignInUIDelegate {
         
         password.layer.cornerRadius = 20
         password.layer.masksToBounds = true
-        
+        password.isSecureTextEntry = true
+    }
+    
+    // execute enter after when input character
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        password.resignFirstResponder()
+        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") {
+            self.navigationController?.pushViewController(viewController, animated: true)
+            self.dismiss(animated: true, completion: nil)
+        }
+        return true
     }
     
     @IBAction func handleLogin(_ sender: Any) {
@@ -61,7 +71,10 @@ class LoginController: UIViewController, GIDSignInUIDelegate {
                     print(error.localizedDescription)
                 }
                 
-                print("login success")
+                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") {
+                    self.navigationController?.pushViewController(viewController, animated: true)
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
         }
     }
@@ -98,10 +111,10 @@ class LoginController: UIViewController, GIDSignInUIDelegate {
                         databaseRef.child("user-profiles").child(uid).child("email").setValue(user?.email)
                     }
                     
-//                    if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "Main") {
-//                        UIApplication.shared.keyWindow?.rootViewController = viewController
-//                        self.dismiss(animated: true, completion: nil)
-//                    }
+                    if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") {
+                        UIApplication.shared.keyWindow?.rootViewController = viewController
+                        self.dismiss(animated: true, completion: nil)
+                    }
                 })
             })
         }
