@@ -31,6 +31,18 @@ class LoginController: UIViewController, GIDSignInUIDelegate, UITextFieldDelegat
         SignIn.addTarget(self, action: #selector(handleSignInGmail), for: .touchUpInside)
         SignInFace.addTarget(self, action: #selector(handleSignInFacebook), for: .touchUpInside)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = false
+    }
 
     private func setupLayout() {
         logoShop.backgroundColor = UIColor.white
@@ -48,10 +60,8 @@ class LoginController: UIViewController, GIDSignInUIDelegate, UITextFieldDelegat
     // execute enter after when input character
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         password.resignFirstResponder()
-        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") {
-            self.navigationController?.pushViewController(viewController, animated: true)
-            self.dismiss(animated: true, completion: nil)
-        }
+        self.transferToControllerWithIndentifier(indentifier: "HomeController")
+        
         return true
     }
     
@@ -71,10 +81,7 @@ class LoginController: UIViewController, GIDSignInUIDelegate, UITextFieldDelegat
                     print(error.localizedDescription)
                 }
                 
-                if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "HomeController") {
-                    self.navigationController?.pushViewController(viewController, animated: true)
-                    self.dismiss(animated: true, completion: nil)
-                }
+                self.transferToControllerWithIndentifier(indentifier: "HomeController")
             }
         }
     }
@@ -122,6 +129,14 @@ class LoginController: UIViewController, GIDSignInUIDelegate, UITextFieldDelegat
     
     @objc func handleSignInGmail() {
         GIDSignIn.sharedInstance().signIn()
+    }
+    
+    func transferToControllerWithIndentifier(indentifier: String) {
+        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: indentifier) {
+            UIApplication.shared.keyWindow?.rootViewController = viewController
+//            self.navigationController?.pushViewController(viewController, animated: true)
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 
 }

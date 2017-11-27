@@ -33,6 +33,12 @@ class HomeController: UITableViewController {
         self.view.addGestureRecognizer(swipeLeft)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     @objc func recognizerSwipe(sender: UISwipeGestureRecognizer) {
         switch sender.direction {
         case UISwipeGestureRecognizerDirection.right:
@@ -54,7 +60,7 @@ class HomeController: UITableViewController {
     
     private func showSlideMenu() {
         menuController = self.storyboard?.instantiateViewController(withIdentifier: "MenuController") as? MenuController
-        menuController?.view.frame = CGRect(x: 0, y: 0, width: (self.view.bounds.width / 3) + (self.view.bounds.height / 5), height: self.view.bounds.height)
+        menuController?.view.frame = CGRect(x: 0, y: 0, width: (self.view.bounds.width / 3) + (self.view.bounds.height / 5), height: 218 + (70 * 5))
         
         UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.addChildViewController(self.menuController!)
@@ -98,6 +104,8 @@ class HomeController: UITableViewController {
         }
     }
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "sendCategoryProduct", sender: nil)
+    }
 
 }

@@ -8,28 +8,63 @@
 
 import UIKit
 
-class CategoryProductController: UIViewController {
+class CategoryProductController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout{
 
+    @IBOutlet weak var menuBar: MenuBarView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    let feedID = "feedID"
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        collectionView.alwaysBounceHorizontal = true
+        collectionView.isPagingEnabled = true
+        collectionView.register(FeedCell.self, forCellWithReuseIdentifier: feedID)
+        
+        menuBar.categoriesController = self
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        label.text = "WOMEN"
+        label.font = UIFont.systemFont(ofSize: 16)
+        self.navigationItem.titleView = label
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // transfer item correcponding of collection when pick menuBar
+    func scrollToMenuIndex(menuIndex: Int) {
+        let indexpath = NSIndexPath(item: menuIndex, section: 0) as  IndexPath
+        collectionView?.scrollToItem(at: indexpath, at: .left, animated: true)
     }
-    */
-
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let index = targetContentOffset.pointee.x / view.frame.width
+        let indexPath = NSIndexPath(item: Int(index), section: 0)
+        self.menuBar.collectionView.selectItem(at: indexPath as IndexPath, animated: true, scrollPosition: .centeredVertically)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let paddingLeft: CGFloat = 40.0
+        menuBar.horizontalBarLeftAnchorConstraint?.constant = (scrollView.contentOffset.x / 4) + paddingLeft
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedID, for: indexPath) as? FeedCell
+        return cell!
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: view.frame.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
 }
