@@ -41,13 +41,11 @@ extension UIImage {
 
 extension UIView {
     func addConstrantWithFormat(format: String, views: UIView...) {
-        var dictionary = [String: UIView]()
-    
+        var dictionary: [String: UIView]?
         for (index, value) in views.enumerated() {
-            let index = "v\(index)"
-            dictionary[index] = value
+            dictionary!["v\(index)"] = value
         }
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(), metrics: nil, views: dictionary))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: format, options: NSLayoutFormatOptions(), metrics: nil, views: dictionary!))
     }
 }
 
@@ -77,11 +75,5 @@ extension UIImageView {
             }).resume()
         }
         
-    }
-}
-
-extension UIColor {
-    convenience init(r: CGFloat, g: CGFloat, b: CGFloat) {
-        self.init(red: r / 255, green: g / 255, blue: b / 255, alpha: 1)
     }
 }

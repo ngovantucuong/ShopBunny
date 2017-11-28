@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SlideMenuCell: UITableViewCell {
+class MenuCell: UITableViewCell {
 
    
     @IBOutlet weak var imageIcon: UIImageView!
