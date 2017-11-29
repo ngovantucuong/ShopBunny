@@ -48,12 +48,8 @@ class MenuBarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource,
         addSubview(horizontalBarView)
         
         let paddingLeft = (frame.width / 4) / 2
-//        horizontalBarLeftAnchorConstraint = horizontalBarView.leftAnchor.constraint(equalTo: self.leftAnchor)
         horizontalBarLeftAnchorConstraint = NSLayoutConstraint(item: horizontalBarView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: paddingLeft)
         addConstraint(horizontalBarLeftAnchorConstraint!)
-//        addConstraint(NSLayoutConstraint(item: horizontalBarView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: paddingLeft))
-//        horizontalBarView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: CGFloat(paddingLeft))
-//        horizontalBarLeftAnchorConstraint?.isActive = true
        
         horizontalBarView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         horizontalBarView.heightAnchor.constraint(equalToConstant: 8).isActive = true

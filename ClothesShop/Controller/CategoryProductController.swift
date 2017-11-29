@@ -18,7 +18,7 @@ class CategoryProductController: UIViewController, UICollectionViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -28,7 +28,7 @@ class CategoryProductController: UIViewController, UICollectionViewDataSource, U
         collectionView.register(FeedCell.self, forCellWithReuseIdentifier: feedID)
         
         menuBar.categoriesController = self
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
+        let label = UILabel(frame: CGRect(x: UIScreen.main.bounds.width / 2, y: 0, width: view.frame.width, height: view.frame.height))
         label.text = "WOMEN"
         label.font = UIFont.systemFont(ofSize: 16)
         self.navigationItem.titleView = label
@@ -47,7 +47,8 @@ class CategoryProductController: UIViewController, UICollectionViewDataSource, U
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        menuBar.horizontalBarLeftAnchorConstraint?.constant = (scrollView.contentOffset.x / 4) 
+        let paddingLeft: CGFloat = 40
+        menuBar.horizontalBarLeftAnchorConstraint?.constant = (scrollView.contentOffset.x / 4) + paddingLeft
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

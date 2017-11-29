@@ -32,10 +32,15 @@ class LoginController: UIViewController, GIDSignInUIDelegate, UITextFieldDelegat
         SignInFace.addTarget(self, action: #selector(handleSignInFacebook), for: .touchUpInside)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewDidDisappear(_ animated: Bool) {
