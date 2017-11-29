@@ -31,6 +31,18 @@ class LoginController: UIViewController, GIDSignInUIDelegate, UITextFieldDelegat
         SignIn.addTarget(self, action: #selector(handleSignInGmail), for: .touchUpInside)
         SignInFace.addTarget(self, action: #selector(handleSignInFacebook), for: .touchUpInside)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = false
+    }
 
     private func setupLayout() {
         logoShop.backgroundColor = UIColor.white

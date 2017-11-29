@@ -54,7 +54,7 @@ class HomeController: UITableViewController {
     
     private func showSlideMenu() {
         menuController = self.storyboard?.instantiateViewController(withIdentifier: "MenuController") as? MenuController
-        menuController?.view.frame = CGRect(x: 0, y: 0, width: (self.view.bounds.width / 3) + (self.view.bounds.height / 5), height: self.view.bounds.height)
+        menuController?.view.frame = CGRect(x: 0, y: 0, width: (self.view.bounds.width / 3) + (self.view.bounds.height / 5), height: 218 + (70 * 5))
         
         UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.addChildViewController(self.menuController!)
@@ -98,6 +98,9 @@ class HomeController: UITableViewController {
         }
     }
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let categoryController = storyboard?.instantiateViewController(withIdentifier: "CategoryProductController") else { return }
+        self.navigationController?.pushViewController(categoryController, animated: true)
+    }
 
 }
