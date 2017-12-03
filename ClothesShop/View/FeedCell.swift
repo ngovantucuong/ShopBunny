@@ -13,6 +13,7 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     let cellID = "cellID"
     var productArray: [Product]?
     var categoryController: CategoryProductController?
+    var navigationController: UINavigationController?
     
     lazy var collectionview: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -67,5 +68,16 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
         let pading: CGFloat = 10
         let collectionviewSize = self.collectionview.frame.width - pading
         return CGSize(width: collectionviewSize / 2, height: 256)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        if let window = UIApplication.shared.keyWindow {
+        
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let detailProductController = storyBoard.instantiateViewController(withIdentifier: "DetailCategoryProductController") as! DetailCategoryProductController
+            detailProductController.product = productArray?[indexPath.item]
+            self.navigationController?.pushViewController(detailProductController, animated: true)
+//            window.rootViewController = detailProductController
+//        }
     }
 }

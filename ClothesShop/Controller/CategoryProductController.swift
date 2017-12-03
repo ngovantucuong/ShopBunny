@@ -37,6 +37,11 @@ class CategoryProductController: UIViewController, UICollectionViewDataSource, U
         setupBarItem()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     func setupBarItem() {
         if titleCategory == "MEN" {
             menuBar.category = categoriesMen
@@ -64,15 +69,6 @@ class CategoryProductController: UIViewController, UICollectionViewDataSource, U
     
     @objc func handleSearch() {
         
-    }
-    
-    func fetchProduct(url: String) {
-        ApiService.shareInstance.fetchProductForUrl(url: url, complete: {(products: [Product]) in
-            DispatchQueue.main.async {
-                self.products = products
-                self.collectionView.reloadData()
-            }
-        })
     }
     
     // transfer item correcponding of collection when pick menuBar
@@ -109,6 +105,7 @@ class CategoryProductController: UIViewController, UICollectionViewDataSource, U
         let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedID, for: indexPath) as? FeedCell
         cell?.productArray = products
         cell?.categoryController = self
+        cell?.navigationController = self.navigationController
         
         if titleCategory == "MEN" {
             cell?.stringJsonData = urlJsonCategoryMen[indexPath.item]
@@ -126,4 +123,6 @@ class CategoryProductController: UIViewController, UICollectionViewDataSource, U
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+
+
 }
