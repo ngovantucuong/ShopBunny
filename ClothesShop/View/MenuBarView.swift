@@ -11,7 +11,7 @@ import UIKit
 class MenuBarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
 
     let cellID = "cellID"
-    let category = ["T-Shirt", "DRESS", "PANTS", "SHIRTS"]
+    var category = [String]()
     var categoriesController: CategoryProductController?
     
     lazy var collectionView: UICollectionView = {
@@ -32,7 +32,7 @@ class MenuBarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource,
         addSubview(collectionView)
         
         addConstrantWithFormat(format: "H:|[v0]|", views: collectionView)
-        addConstrantWithFormat(format: "V:|[v0]|", views: collectionView)
+        addConstrantWithFormat(format: "V:|[v0]-8-|", views: collectionView)
         
         setupHorizontalBar()
     }
@@ -41,20 +41,20 @@ class MenuBarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource,
     
     func setupHorizontalBar() {
         let horizontalBarView = UIView()
-        horizontalBarView.backgroundColor = UIColor.blue
+        horizontalBarView.backgroundColor = UIColor.black
         horizontalBarView.translatesAutoresizingMaskIntoConstraints = false
         horizontalBarView.layer.cornerRadius = 4
         horizontalBarView.layer.masksToBounds = true
         addSubview(horizontalBarView)
         
-        let paddingLeft = (frame.width / 4) / 2
+        let paddingLeft = (frame.width / 3) / 2
         horizontalBarLeftAnchorConstraint = NSLayoutConstraint(item: horizontalBarView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: paddingLeft)
         addConstraint(horizontalBarLeftAnchorConstraint!)
        
+//        horizontalBarView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
         horizontalBarView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         horizontalBarView.heightAnchor.constraint(equalToConstant: 8).isActive = true
         horizontalBarView.widthAnchor.constraint(equalToConstant: 8).isActive = true
-//        horizontalBarView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/4).isActive = true
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -63,12 +63,15 @@ class MenuBarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as? MenuCell
-        cell?.nameCategory.text = category[indexPath.item]
+        let textCategory = category[indexPath.item]
+        cell?.nameCategory.text = textCategory
+        cell?.heighConstrantNameCategory?.constant = CGFloat(textCategory.count)
         return cell!
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: frame.width / 4, height: frame.height)
+        let countCategories: CGFloat = CGFloat(category.count)
+        return CGSize(width: frame.width / countCategories, height: frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -87,6 +90,7 @@ class MenuCell: BaseCell {
         lb.translatesAutoresizingMaskIntoConstraints = false
         lb.font = UIFont.systemFont(ofSize: 17)
         lb.textAlignment = .center
+        lb.numberOfLines = 1
         return lb
     }()
     
@@ -102,10 +106,14 @@ class MenuCell: BaseCell {
         }
     }
     
+    var heighConstrantNameCategory: NSLayoutConstraint?
     override func setupViews() {
         addSubview(nameCategory)
         
         addConstrantWithFormat(format: "H:|[v0]|", views: nameCategory)
-        addConstrantWithFormat(format: "V:|[v0]|", views: nameCategory)
+        addConstrantWithFormat(format: "V:[v0]", views: nameCategory)
+        
+        heighConstrantNameCategory = NSLayoutConstraint(item: nameCategory, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1, constant: 0)
+        addConstraint(heighConstrantNameCategory!)
     }
 }

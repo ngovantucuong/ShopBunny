@@ -14,6 +14,7 @@ class HomeController: UITableViewController {
     let categories: [Categories] = [Categories(label: "", subLabel: "", picture: #imageLiteral(resourceName: "saleBackground")), Categories(label: "WOMEN", subLabel: "Ready For Anything", picture: #imageLiteral(resourceName: "categoryWomen")), Categories(label: "MEN", subLabel: "Christmas gifting wrapped up fast", picture: #imageLiteral(resourceName: "Men"))]
     var isTouchSlideMenu: Bool = true
     var menuController: MenuController?
+    var titleCategory: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,6 +85,7 @@ class HomeController: UITableViewController {
         else {
             let cell = Bundle.main.loadNibNamed("HomeCategory", owner: self, options: nil)?.first as? HomeCategoryCell
             cell?.Label.text = categories[indexPath.row].label
+            
             cell?.subLabel.text = categories[indexPath.row].subLabel
             cell?.picture.image = categories[indexPath.row].picture
             return cell!
@@ -99,8 +101,15 @@ class HomeController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let categoryController = storyboard?.instantiateViewController(withIdentifier: "CategoryProductController") else { return }
-        self.navigationController?.pushViewController(categoryController, animated: true)
+        titleCategory = categories[indexPath.row].label
+        performSegue(withIdentifier: "sendCategory", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sendCategory" {
+            let categoryController = segue.destination as! CategoryProductController
+            categoryController.titleCategory = titleCategory
+        }
     }
 
 }

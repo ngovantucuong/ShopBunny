@@ -11,11 +11,7 @@ import UIKit
 class ApiService: NSObject {
 
     static let shareInstance = ApiService()
-    
-    func fetchProduct(complete: @escaping([Product]) -> ()) {
-        
-    }
-    
+
     func fetchProductForUrl(url: String, complete: @escaping([Product]) -> ()) {
         
         guard let url = NSURL(string: url) else {
@@ -26,7 +22,23 @@ class ApiService: NSObject {
             if error != nil {
                 print(error!.localizedDescription)
             }
+        
+            guard let data = data else { return }
             
+            do {
+                if let jsonData = try JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject] {
+                    var products = [Product]()
+                    let productDictionary = jsonData["Product"] as! [[String: Any]]
+                    for dictionary in productDictionary {
+                       let product = Product(dictionary: dictionary)
+                        products.append(product)
+                    }
+                    
+                        complete(products)
+                }
+            } catch let error {
+                print(error.localizedDescription)
+            }
             
             
         }).resume()
