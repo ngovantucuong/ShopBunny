@@ -57,7 +57,7 @@ class HomeController: UITableViewController {
         menuController = self.storyboard?.instantiateViewController(withIdentifier: "MenuController") as? MenuController
         menuController?.view.frame = CGRect(x: 0, y: 0, width: (self.view.bounds.width / 3) + (self.view.bounds.height / 5), height: 218 + (70 * 5))
         
-        UIView.animate(withDuration: 0.5, delay: 0.5, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
             self.addChildViewController(self.menuController!)
             self.view.addSubview(self.menuController!.view)
         }, completion: nil)

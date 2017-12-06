@@ -11,6 +11,8 @@
 		E80C4B341FCC2A1B00D4B473 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80C4B331FCC2A1B00D4B473 /* Product.swift */; };
 		E80C4B361FCC2AB300D4B473 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80C4B351FCC2AB300D4B473 /* FeedCell.swift */; };
 		E80C4B391FCC41F800D4B473 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80C4B381FCC41F800D4B473 /* ApiService.swift */; };
+		E80F194E1FD6CC6600470368 /* AddCartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80F194D1FD6CC6600470368 /* AddCartController.swift */; };
+		E80F19521FD6D88400470368 /* AddCartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E80F19511FD6D88400470368 /* AddCartView.xib */; };
 		E81C79961FD38344007E75CB /* DetailCategoryProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81C79951FD38344007E75CB /* DetailCategoryProductController.swift */; };
 		E81C79981FD3D738007E75CB /* ImageGalleryLaucher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81C79971FD3D738007E75CB /* ImageGalleryLaucher.swift */; };
 		E81C799A1FD3D872007E75CB /* ImageGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81C79991FD3D872007E75CB /* ImageGallery.swift */; };
@@ -55,6 +57,8 @@
 		E80C4B331FCC2A1B00D4B473 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		E80C4B351FCC2AB300D4B473 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		E80C4B381FCC41F800D4B473 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		E80F194D1FD6CC6600470368 /* AddCartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCartController.swift; sourceTree = "<group>"; };
+		E80F19511FD6D88400470368 /* AddCartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCartView.xib; sourceTree = "<group>"; };
 		E81C79951FD38344007E75CB /* DetailCategoryProductController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCategoryProductController.swift; sourceTree = "<group>"; };
 		E81C79971FD3D738007E75CB /* ImageGalleryLaucher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryLaucher.swift; sourceTree = "<group>"; };
 		E81C79991FD3D872007E75CB /* ImageGallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGallery.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 				E8917C0A1FBDC12E00746974 /* DesignableX */,
 				E86BF2151FC457F0000E06BE /* HomeCell.xib */,
 				E86BF2171FC462D7000E06BE /* HomeCategory.xib */,
+				E80F19511FD6D88400470368 /* AddCartView.xib */,
 			);
 			path = ClothesShop;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 				E8F479821FC700DE00DDBBA7 /* CategoryProductController.swift */,
 				E81C79951FD38344007E75CB /* DetailCategoryProductController.swift */,
 				E81C79971FD3D738007E75CB /* ImageGalleryLaucher.swift */,
+				E80F194D1FD6CC6600470368 /* AddCartController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 				E8917C001FBDB97900746974 /* Assets.xcassets in Resources */,
 				E8917BFB1FBDB97900746974 /* Main.storyboard in Resources */,
 				E86BF2161FC457F0000E06BE /* HomeCell.xib in Resources */,
+				E80F19521FD6D88400470368 /* AddCartView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +416,7 @@
 				E8F479831FC700DE00DDBBA7 /* CategoryProductController.swift in Sources */,
 				E8917C1A1FBDC12E00746974 /* UIViewAnchorPoint.swift in Sources */,
 				E8917C171FBDC12E00746974 /* UILabelX.swift in Sources */,
+				E80F194E1FD6CC6600470368 /* AddCartController.swift in Sources */,
 				E8917C1B1FBDC12E00746974 /* UIViewControllerX.swift in Sources */,
 				E8917C191FBDC12E00746974 /* UITextFieldX.swift in Sources */,
 				E8917C211FBDC3E700746974 /* RegisterController.swift in Sources */,

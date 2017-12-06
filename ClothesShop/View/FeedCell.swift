@@ -71,13 +71,12 @@ class FeedCell: BaseCell, UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if let window = UIApplication.shared.keyWindow {
-        
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let detailProductController = storyBoard.instantiateViewController(withIdentifier: "DetailCategoryProductController") as! DetailCategoryProductController
             detailProductController.product = productArray?[indexPath.item]
+            detailProductController.titleCategory = categoryController?.titleCategory
+        
+            self.navigationController?.navigationItem.backBarButtonItem?.title = categoryController?.titleCategory
             self.navigationController?.pushViewController(detailProductController, animated: true)
-//            window.rootViewController = detailProductController
-//        }
     }
 }

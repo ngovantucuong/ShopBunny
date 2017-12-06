@@ -11,8 +11,8 @@ import UIKit
 class SlideMenuCell: UITableViewCell {
 
    
-    @IBOutlet weak var imageIcon: UIImageView!
-    @IBOutlet weak var content: UILabel!
+    @IBOutlet weak var imageIcon: UIImageView?
+    @IBOutlet weak var content: UILabel?
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -29,7 +29,6 @@ class RegisterController: UIViewController, UIImagePickerControllerDelegate, UIN
 
     // set layout for register
     private func setLayoutRegister() {
-//        profileImage.backgroundColor = UIColor.clear
         profileImage.tintColor = UIColor.white
         username.setBottomLine(borderColor: UIColor.white, textColor: UIColor.white, placeHolderColor: UIColor.white, placeHolder: "Enter your name...")
         email.setBottomLine(borderColor: UIColor.white, textColor: UIColor.white, placeHolderColor: UIColor.white, placeHolder: "Enter address email...")
@@ -119,7 +118,7 @@ class RegisterController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     @IBAction func handleLogin(_ sender: UIButton) {
-        performSegue(withIdentifier: "backLogin", sender: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

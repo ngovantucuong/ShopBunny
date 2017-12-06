@@ -25,28 +25,30 @@ class LoginController: UIViewController, GIDSignInUIDelegate, UITextFieldDelegat
         super.viewDidLoad()
 
         setupLayout()
+        
         GIDSignIn.sharedInstance().uiDelegate = self
         password.delegate = self
+        self.navigationController?.isNavigationBarHidden = true
         
         SignIn.addTarget(self, action: #selector(handleSignInGmail), for: .touchUpInside)
         SignInFace.addTarget(self, action: #selector(handleSignInFacebook), for: .touchUpInside)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
+        
+        let image = UIImage(named: "warehouse")?.withRenderingMode(.alwaysOriginal).resizeImage(targetSize: CGSize(width: 30, height: 30))
+        self.tabBarController?.tabBar.items![0].image = image
+        self.tabBarController?.tabBar.items![0].image?.resizableImage(withCapInsets: UIEdgeInsetsMake(16, 0, 8, 0))
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewDidDisappear(animated)
         
         self.navigationController?.isNavigationBarHidden = false
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     private func setupLayout() {

@@ -37,11 +37,6 @@ class CategoryProductController: UIViewController, UICollectionViewDataSource, U
         setupBarItem()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = true
-        self.tabBarController?.tabBar.isHidden = true
-    }
-    
     func setupBarItem() {
         if titleCategory == "MEN" {
             menuBar.category = categoriesMen
