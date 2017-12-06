@@ -27,8 +27,6 @@ class MenuController: UIViewController, UITableViewDataSource, UITableViewDelega
         setupLayout()
         tableView.dataSource = self
         tableView.delegate = self
-        
-        
     }
 
     private func setupLayout() {
@@ -54,8 +52,8 @@ class MenuController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as? SlideMenuCell
         let item = itemSlideMenu[indexPath.row]
-        cell?.imageIcon.image = item.imageIcon
-        cell?.content.text = item.content
+        cell?.imageIcon?.image = item.imageIcon
+        cell?.content?.text = item.content
         
         return cell!
     }

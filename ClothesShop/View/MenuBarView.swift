@@ -32,7 +32,7 @@ class MenuBarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource,
         addSubview(collectionView)
         
         addConstrantWithFormat(format: "H:|[v0]|", views: collectionView)
-        addConstrantWithFormat(format: "V:|[v0]-8-|", views: collectionView)
+        addConstrantWithFormat(format: "V:|-8-[v0]|", views: collectionView)
         
         setupHorizontalBar()
     }
@@ -51,7 +51,6 @@ class MenuBarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource,
         horizontalBarLeftAnchorConstraint = NSLayoutConstraint(item: horizontalBarView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: paddingLeft)
         addConstraint(horizontalBarLeftAnchorConstraint!)
        
-//        horizontalBarView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8).isActive = true
         horizontalBarView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         horizontalBarView.heightAnchor.constraint(equalToConstant: 8).isActive = true
         horizontalBarView.widthAnchor.constraint(equalToConstant: 8).isActive = true
@@ -65,7 +64,6 @@ class MenuBarView: UIView, UICollectionViewDelegate, UICollectionViewDataSource,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as? MenuCell
         let textCategory = category[indexPath.item]
         cell?.nameCategory.text = textCategory
-        cell?.heighConstrantNameCategory?.constant = CGFloat(textCategory.count)
         return cell!
     }
     
@@ -106,14 +104,10 @@ class MenuCell: BaseCell {
         }
     }
     
-    var heighConstrantNameCategory: NSLayoutConstraint?
     override func setupViews() {
         addSubview(nameCategory)
         
         addConstrantWithFormat(format: "H:|[v0]|", views: nameCategory)
         addConstrantWithFormat(format: "V:[v0]", views: nameCategory)
-        
-        heighConstrantNameCategory = NSLayoutConstraint(item: nameCategory, attribute: .height, relatedBy: .equal, toItem: self, attribute: .height, multiplier: 1, constant: 0)
-        addConstraint(heighConstrantNameCategory!)
     }
 }

@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // setting for authentication for login with facebook
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
+        UITabBar.appearance().tintColor = UIColor.black
+ 
         return true
     }
     
