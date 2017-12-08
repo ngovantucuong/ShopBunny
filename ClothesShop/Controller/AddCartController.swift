@@ -10,6 +10,7 @@ import UIKit
 
 class AddCartController: UIViewController {
 
+<<<<<<< HEAD
     @IBOutlet weak var imageProduct: UIImageView!
     @IBOutlet weak var nameProduct: UILabel!
     @IBOutlet weak var price: UILabel!
@@ -72,5 +73,28 @@ class AddCartController: UIViewController {
             self.dismiss(animated: true, completion: nil)
         }, completion: nil)
     }
+=======
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+>>>>>>> 00c0d1b84e15c521c0e748002e021658823c2988
 
 }

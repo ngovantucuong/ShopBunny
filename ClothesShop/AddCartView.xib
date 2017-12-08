@@ -12,18 +12,32 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+<<<<<<< HEAD
         <view contentMode="scaleToFill" restorationIdentifier="AddCartView" id="ZLX-j0-URF">
+=======
+        <view contentMode="scaleToFill" restorationIdentifier="AddCartView" id="ZLX-j0-URF" customClass="UIViewX" customModule="ClothesShop" customModuleProvider="target">
+>>>>>>> 00c0d1b84e15c521c0e748002e021658823c2988
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hUg-Zb-mW9">
+<<<<<<< HEAD
                     <rect key="frame" x="0.0" y="0.0" width="375" height="349"/>
+=======
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="372"/>
+                    <color key="backgroundColor" red="0.19215686269999999" green="0.61221596710000004" blue="0.96126302080000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+>>>>>>> 00c0d1b84e15c521c0e748002e021658823c2988
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="BlO-em-9iJ">
                     <rect key="frame" x="16" y="380" width="343" height="94.5"/>
                     <subviews>
+<<<<<<< HEAD
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="D6u-wK-hTG">
                             <rect key="frame" x="0.0" y="0.0" width="341" height="20.5"/>
+=======
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="65" translatesAutoresizingMaskIntoConstraints="NO" id="D6u-wK-hTG">
+                            <rect key="frame" x="0.0" y="0.0" width="306" height="20.5"/>
+>>>>>>> 00c0d1b84e15c521c0e748002e021658823c2988
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FAUX LEATHER JACKET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5h-t1-FYz">
                                     <rect key="frame" x="0.0" y="0.0" width="185.5" height="20.5"/>
@@ -32,7 +46,11 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$23.45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUT-Fc-aOh">
+<<<<<<< HEAD
                                     <rect key="frame" x="285.5" y="0.0" width="55.5" height="20.5"/>
+=======
+                                    <rect key="frame" x="250.5" y="0.0" width="55.5" height="20.5"/>
+>>>>>>> 00c0d1b84e15c521c0e748002e021658823c2988
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -42,6 +60,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="GNg-Ud-Qhy">
                             <rect key="frame" x="0.0" y="35.5" width="186.5" height="59"/>
                             <subviews>
+<<<<<<< HEAD
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="c6y-Mg-MUH">
                                     <rect key="frame" x="0.0" y="0.0" width="186.5" height="45"/>
                                     <subviews>
@@ -59,6 +78,20 @@
                                         </label>
                                     </subviews>
                                 </stackView>
+=======
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height of model: 178 cm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvl-JA-wM2">
+                                    <rect key="frame" x="0.0" y="0.0" width="186.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ref: 052/56/23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJd-19-7Lf">
+                                    <rect key="frame" x="0.0" y="24.5" width="116.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+>>>>>>> 00c0d1b84e15c521c0e748002e021658823c2988
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Gm0-0D-C1N">
                                     <rect key="frame" x="0.0" y="49" width="38" height="10"/>
                                     <subviews>
@@ -116,7 +149,11 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
+<<<<<<< HEAD
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uoo-yX-BaI" customClass="DropMenuButton" customModule="ClothesShop" customModuleProvider="target">
+=======
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uoo-yX-BaI" customClass="UIButtonX" customModule="ClothesShop">
+>>>>>>> 00c0d1b84e15c521c0e748002e021658823c2988
                     <rect key="frame" x="16" y="490" width="343" height="43"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="43" id="MBb-YA-RZ8"/>
@@ -142,7 +179,11 @@
                     </constraints>
                     <state key="normal" backgroundImage="dropdowIcon"/>
                 </button>
+<<<<<<< HEAD
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yso-Y1-KEo" customClass="DropMenuButton" customModule="ClothesShop" customModuleProvider="target">
+=======
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yso-Y1-KEo" customClass="UIButtonX" customModule="ClothesShop" customModuleProvider="target">
+>>>>>>> 00c0d1b84e15c521c0e748002e021658823c2988
                     <rect key="frame" x="16" y="550" width="343" height="43"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="43" id="TH0-kt-80a"/>
@@ -184,7 +225,11 @@
                 <constraint firstItem="Uoo-yX-BaI" firstAttribute="top" secondItem="BlO-em-9iJ" secondAttribute="bottom" constant="15.5" id="4uy-M7-xcK"/>
                 <constraint firstItem="HsU-jN-4vr" firstAttribute="top" secondItem="yso-Y1-KEo" secondAttribute="bottom" constant="17" id="68q-FP-eje"/>
                 <constraint firstItem="hUg-Zb-mW9" firstAttribute="trailing" secondItem="RxH-4f-h48" secondAttribute="trailing" id="7UX-YO-YBb"/>
+<<<<<<< HEAD
                 <constraint firstItem="BlO-em-9iJ" firstAttribute="top" secondItem="hUg-Zb-mW9" secondAttribute="bottom" constant="31" id="7Zc-Pt-j1w"/>
+=======
+                <constraint firstItem="BlO-em-9iJ" firstAttribute="top" secondItem="hUg-Zb-mW9" secondAttribute="bottom" constant="8" id="7Zc-Pt-j1w"/>
+>>>>>>> 00c0d1b84e15c521c0e748002e021658823c2988
                 <constraint firstItem="hUg-Zb-mW9" firstAttribute="top" secondItem="ZLX-j0-URF" secondAttribute="top" id="8iL-jh-kAO"/>
                 <constraint firstItem="pig-7T-vh2" firstAttribute="top" secondItem="Uoo-yX-BaI" secondAttribute="bottom" constant="17" id="DIT-VH-uXJ"/>
                 <constraint firstItem="RxH-4f-h48" firstAttribute="trailing" secondItem="Uoo-yX-BaI" secondAttribute="trailing" constant="16" id="KbL-Hh-TWg"/>
@@ -203,6 +248,7 @@
                 <constraint firstItem="pig-7T-vh2" firstAttribute="trailing" secondItem="yso-Y1-KEo" secondAttribute="trailing" id="yRE-Sp-Orr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="RxH-4f-h48"/>
+<<<<<<< HEAD
             <connections>
                 <outlet property="addToCart" destination="HsU-jN-4vr" id="mHZ-wy-1Nf"/>
                 <outlet property="backButton" destination="Jy6-aB-gkl" id="X4P-EP-Zml"/>
@@ -212,6 +258,8 @@
                 <outlet property="price" destination="fUT-Fc-aOh" id="jmr-jn-sAw"/>
                 <outlet property="size" destination="Uoo-yX-BaI" id="EAx-yP-bNq"/>
             </connections>
+=======
+>>>>>>> 00c0d1b84e15c521c0e748002e021658823c2988
             <point key="canvasLocation" x="71.5" y="82.5"/>
         </view>
     </objects>
